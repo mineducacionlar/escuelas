@@ -1,0 +1,77 @@
+<div class="row">
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Usuarios</h4>
+
+                <table class="table table-hover" *ngIf="usuarios.length > 0">
+                    <tbody>
+                        <tr *ngFor="let usuario of usuarios" [routerLink]="['/usuarios']" class="pointer">
+                            <td>
+                                <img [src]="usuario.img | imagen" class="img-50 img-circle">
+                            </td>
+                            <td>{{ usuario.nombre }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-info" *ngIf="usuarios.length === 0">
+                    No hay registros
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Directores</h4>
+
+                <table class="table table-hover" *ngIf="directores.length > 0">
+                    <tbody>
+                        <tr *ngFor="let director of directores" [routerLink]="['/director', director._id]" class="pointer">
+                            <td>
+                                <img [src]="director.img | imagen:'director'" class="img-50 img-circle">
+                            </td>
+                            <td>{{ director.nombre }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-info" *ngIf="directores.length === 0">
+                    No hay registros
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Escuelas</h4>
+
+                <table class="table table-hover" *ngIf="escuelas.length > 0">
+                    <tbody>
+                        <tr *ngFor="let escuela of escuelas" [routerLink]="['/escuela', escuela._id]" class="pointer">
+                            <td>
+                                <img [src]="escuela.img | imagen:'escuela'" class="img-50 img-circle">
+                            </td>
+                            <td>{{ escuela.nombre }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-info" *ngIf="escuelas.length === 0">
+                    No hay registros
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
