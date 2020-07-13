@@ -11,8 +11,9 @@ import { EscuelasComponent } from '../escuelas/escuelas.component';
 import { DirectoresComponent } from '../directores/directores.component';
 import { DirectorComponent } from '../directores/director.component';
 import { BusquedaComponent } from '../busqueda/busqueda.component';
+import { ListadosComponent } from '../listados/listados.component';
+import { ListadoComponent } from '../listados/listado.component';
 import { EscuelaComponent } from '../escuelas/escuela.component';
-
 
 // 1)
 const pagesRoutes: Routes = [
@@ -26,7 +27,8 @@ const pagesRoutes: Routes = [
         {path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de Usuario' }},
         {path: 'mapbox', component: MapboxComponent, data: { titulo: 'Mapbox' }},
         {path: 'busqueda/:termino', component: BusquedaComponent, data: { titulo: 'Buscador' }},
-
+        {path: 'listados', component: ListadosComponent, data: { titulo: 'Listado de escuelas' }},
+        {path: 'listado/:id', component: ListadoComponent, data: { titulo: 'Listado de escuelas x Dpto' }},
         // Mantenimientos
         {path: 'usuarios',
          component: UsuariosComponent,
@@ -34,7 +36,7 @@ const pagesRoutes: Routes = [
          data: { titulo: 'Mantenimiento de usuarios' }},
 
         {path: 'escuelas', component: EscuelasComponent, data: { titulo: 'Mantenimiento de escuelas' }},
-        {path: 'escuela/:id', component: EscuelaComponent, data: { titulo: 'Info - Mantenimiento de escuela' }},
+        {path: 'escuela/:id', component: EscuelaComponent, data: { titulo: 'Crear-actualizar escuela' }},
         {path: 'directores', component: DirectoresComponent, data: { titulo: 'Mantenimiento de directores' }},
         {path: 'director/:id', component: DirectorComponent, data: { titulo: 'Crear-actualizar director' }},
         {path: '', redirectTo: '/dashboard', pathMatch: 'full'},

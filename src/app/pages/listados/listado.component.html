@@ -1,0 +1,139 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card ">
+            
+            <div class="card-body">
+                <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarEscuela(f)">
+                    <div class="form-body">
+                        <h3 class="box-title">Datos complementarios de la institución: {{ escuela.nombre }}</h3>
+                        <hr class="m-t-0 m-b-40">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="control-label text-right col-md-3">Turno</label>
+                                    <div class="col-md-9">
+                                        <input [(ngModel)]="escuela.turno" name="nombre" type="text" class="form-control">
+                                        </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="control-label text-right col-md-3">Categoría</label>
+                                    <div class="col-md-9">
+                                        <input [(ngModel)]="escuela.categoria" name="categoria" type="text" class="form-control">
+                                         </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <!--/row-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="control-label text-right col-md-3">Observaciones</label>
+                                    <div class="col-md-9">
+                                        <input [(ngModel)]="escuela.observaciones" name="observaciones" type="text" class="form-control">
+                                     </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                          
+                           
+                        </div>
+                        <h3 class="box-title">Ubicación</h3>
+                        <hr class="m-t-0 m-b-40">
+                        <!--/row-->
+ 
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="control-label text-right col-md-3">Localidad</label>
+                                    <div class="col-md-9">
+                                        <input [(ngModel)]="escuela.localidad" name="localidad" type="text" class="form-control" placeholder="Localidad">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="control-label text-right col-md-3">Zona</label>
+                                    <div class="col-md-9">
+                                        <input [(ngModel)]="escuela.zona" name="zona" type="text" class="form-control" placeholder="Zona">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <!--/row-->
+                        <div class="row">
+                        
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="control-label text-right col-md-3">Street Map</label>
+                                    <div class="col-md-9">
+                                        <input [(ngModel)]="escuela.streetmap" name="streetmap" type="text" class="form-control" placeholder="street map">
+                                        <small class="form-control-feedback"> Url de foto correspondiente a Google Street Map</small>
+                                    </div>
+                                </div>     
+                            </div>
+                            <!--/span-->
+                           
+
+                        </div>
+                        <!--/row-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="control-label text-right col-md-3">Latitud</label>
+                                    <div class="col-md-9">
+                                    <input [(ngModel)]="escuela.lat" name="latitud" type="text" class="form-control" placeholder="Latitud"> 
+                                    <small class="form-control-feedback">Coordenadas geográficas Latitud</small>                       
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="control-label text-right col-md-3">Longitud</label>
+                                    <div class="col-md-9">
+                                        <input [(ngModel)]="escuela.long" name="longitud" type="text" class="form-control" placeholder="Longitud">
+                                        <small class="form-control-feedback">Coordenadas geográficas Longitud</small>
+                                    </div>
+                                </div>     
+                            </div>
+                            <!--/span-->
+                           
+
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                       
+                                          <a routerLink="/listados" class="btn btn-inverse waves-effect waves-light">Volver</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6"> </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+ 
+
+
+
+
+
+
+

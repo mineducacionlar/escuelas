@@ -6,12 +6,13 @@ import { NgForm } from '@angular/forms';
 import { DirectorService } from 'src/app/services/director/director.service';
 import { Director } from 'src/app/models/director.model';
 
+
 @Component({
-  selector: 'app-escuela',
-  templateUrl: './escuela.component.html',
+  selector: 'app-listado',
+  templateUrl: './listado.component.html',
   styles: []
 })
-export class EscuelaComponent implements OnInit {
+export class ListadoComponent implements OnInit {
 
   directores: Director[] = [];
   escuela: Escuela = new Escuela('', '', ''); // 1)   ******************¨¨¨¨
@@ -26,20 +27,17 @@ export class EscuelaComponent implements OnInit {
     public router: Router, // ocupo el router para poder navegar
     public activatedRoute: ActivatedRoute,  // para poder leer el id que paso para editar la escuela
   ) {
-
-      activatedRoute.params.subscribe( params => {
+       activatedRoute.params.subscribe( params => {
       // tslint:disable-next-line: no-string-literal
       let id = params[ 'id' ];  // id por que en el pageRouter le coocamos ese valor
-      if ( id !== 'nuevo' ) { // si no es nuevo cargo la escuela
+      if ( id !== 'nuevo' ) {
         this.cargarEscuela ( id ); // y le paso el id
       }
     });
-
-   }
+  }
 
   ngOnInit() {
-       this._directorService.cargarDirectoresCbo()
-                            .subscribe(directores => this.directores = directores);
+
   }
 
   cargarEscuela(id: string ) {   // va a recibir el id de la escuela que quiero buscar
@@ -79,7 +77,6 @@ cambioDirector( id: string ) {
   .subscribe( director => this.director = director );
 
     }
-
 
 
 }

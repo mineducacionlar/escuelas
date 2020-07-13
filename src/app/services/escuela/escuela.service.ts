@@ -26,6 +26,23 @@ export class EscuelaService {
 
                }
 
+  // CARGA INICIAL EN LISTADOS
+  cargarEscuelasList(desde: number = 0) {  // recibe del componente el desde
+
+  let url = URL_SERVICIOS + '/escuela/list?desde=' + desde;
+  return this.http.get( url ); // realziamos peticion para obtener todas las escuelas mandamos el url
+
+              }
+
+ // fx para obtener Escuela por DPTO por parametro
+ obtenerEscuelaList( dpto: string ) {   // utilizada además para obtener cargar datos de escuela al editar la misma
+
+  let url = URL_SERVICIOS + '/escuela/listado' + dpto;
+  return this.http.get( url )
+              .map( (resp: any) => resp.escuela);  // resp.escuela es la rta de postman
+
+}
+
   cargarEscuelasCbo() {
 
     let url = URL_SERVICIOS + '/escuela/cbo';
@@ -37,7 +54,6 @@ export class EscuelaService {
       }
 
 
-
   obtenerEscuela( id: string ) {   // utilizada además para obtener cargar datos de escuela al editar la misma
 
     let url = URL_SERVICIOS + '/escuela/' + id;
@@ -45,6 +61,7 @@ export class EscuelaService {
                 .map( (resp: any) => resp.escuela);  // resp.escuela es la rta de postman
 
   }
+
 
   borrarEscuela( id: string ) {
 

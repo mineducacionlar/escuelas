@@ -21,9 +21,9 @@ import { DirectoresComponent } from './directores/directores.component';
 import { DirectorComponent } from './directores/director.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { EscuelaComponent } from './escuelas/escuela.component';
-
-
-
+import { ListadosComponent } from './listados/listados.component';
+import { ListadoComponent } from './listados/listado.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -44,6 +44,8 @@ import { EscuelaComponent } from './escuelas/escuela.component';
     DirectorComponent,
     BusquedaComponent,
     EscuelaComponent,
+    ListadosComponent,
+    ListadoComponent,
     ],
   exports: [
     DashboardComponent,
@@ -55,7 +57,8 @@ import { EscuelaComponent } from './escuelas/escuela.component';
     FormsModule,
     ChartsModule,
     PipesModule,
-    CommonModule
+    CommonModule,
+    NgxPaginationModule
     ]
 
 })

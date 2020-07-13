@@ -95,6 +95,8 @@ export class DirectorComponent implements OnInit {
 
   }
 
+
+
   cambiarFoto() {
 
     this._modalUploadService.mostrarModal( 'directores', this.director._id );

@@ -11,6 +11,7 @@ export { EscuelaService } from './escuela/escuela.service';
 
 
 
+
 /* tengo todos los servicios en un único archivo index, tomo estos servicios y los exporto siendo esta
 la única referencia directa a los servicios si muevo las carpetas. trabajando con el app.component*/
 

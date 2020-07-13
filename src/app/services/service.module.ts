@@ -7,6 +7,7 @@ import { ModalUploadService } from '../components/modal-upload/modal-upload.serv
 
 // Proveemos todos los servicios al modulo
 
+
 import {
         SettingsService,
         SidebarService,

@@ -33,23 +33,30 @@
             <div class="card-body">
 
                 <div class="text-right">
-                    <button [routerLink]="['/escuela', 'nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
-                      <i class="fa fa-plus"></i> 
-                      Crear Escuela
-                    </button>
+                    <button (click)="exportexcel()" type="button" class="btn waves-effect waves-light btn-rounded btn-info">
+                        <i class="fa fa-file-excel-o fa-1x"></i> 
+                        Exportar a Excel
+                      </button>
                 </div>
-            
+
+                 <!-- <button (click)="exportexcel()">Export to Excel</button> -->
+
+
                 <h3 class="card-title">Escuelas registradas ( <small> {{ totalRegistros }} </small> )</h3>
                 <!-- _escuelaService.totalEscuelas -->
-                <table class="table table-hover">
+                <table id="excel-table" class="table table-hover">
                     <thead>
                         <tr>
                             <th>FOTO</th> 
+                            <th>CUE</th> 
                             <th>NOMBRE</th>
+                            <th>NIVEL</th>
                             <th>DIRECCIÓN</th>
                             <th>BARRIO</th>
                             <th>TELEFONO</th>
-                            <th>DPTO</th>                             
+                            <th>DIRECTOR</th> 
+                            <th>DPTO</th>   
+                                                       
                         </tr>
                     </thead>
 
@@ -57,38 +64,49 @@
                         <tr *ngFor="let escuela of escuelas | paginate: { itemsPerPage: 15, currentPage: p }">
 
                             <td>
-                                <img (click)="actualizarImagen( escuela )" [src]="escuela.img | imagen:'escuela'" class="img-50 pointer">
+                                <img [src]="escuela.img | imagen:'escuela'" class="img-50 pointer">
                             </td>
-
                             <td>
-                                <input [(ngModel)]="escuela.nombre" name="nombre" type="text" size="20" class="form-control" placeholder="Nombre de la escuela"> 
+                                {{escuela.cue}} 
+                            </td>
+                            <td>
+                                {{escuela.nombre}} 
                             </td>
                             
+                            <td>
+                                {{escuela.nivel}} 
+                            </td>
+
                              <td>
-                                <input [(ngModel)]="escuela.domicilio" name="domicilio" type="text" size="14" class="form-control" placeholder="domicilio">
+                                {{escuela.domicilio}} 
                             </td>
 
                             <td>
-                                <input [(ngModel)]="escuela.barrio" name="barrio" size="8" type="text" class="form-control" placeholder="barrio">
+                                {{escuela.barrio}}
                             </td>
 
                             <td>
-                                    <input [(ngModel)]="escuela.telefono" name="telefono" type="text" size="5" class="form-control" placeholder="telefono">              
+                                {{escuela.telefono}} 
                             </td>  
 
                             <td>
-                                <input [(ngModel)]="escuela.dpto" name="dpto" type="text" size="5" class="form-control" placeholder="dpto">              
-                            </td>  
-
+                                <select style="width:250px" (change)="cambioDirector( $event.target.value )" [(ngModel)]="escuela.director" class="form-control" type="text"  disabled=false>
+                                    <option *ngFor="let director of directores" [value]="director._id">
+                                      {{ director.nombre }}
+                                    </option>
+                                </select> 
+                            </td> 
                             
-                                                                                
+                            <td> 
+                                {{escuela.dpto}} 
+                            </td>  
+
+                                                    
                               <td>
-                                  <button [routerLink]="['/escuela', escuela._id ]" class="btn btn-primary">
+                                  <button [routerLink]="['/listado', escuela._id ]" class="btn btn-primary">
                                     <i class="fa fa-plus-square" aria-hidden="true"></i>
                                   </button>
-                                    <button (click)="borrarEscuela( escuela )" class="btn btn-danger">
-                                  <i class="fa fa-trash-o"></i>
-                                </button>
+                                
                             </td>
                         </tr>
 
